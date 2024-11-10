@@ -10,7 +10,8 @@ class Player {
   draw() {
     c.font = '12px sans-serif'
     c.fillStyle = 'white'
-    c.fillText(this.username, this.x - 10, this.y + 20)
+    const textWidth = c.measureText(this.username).width
+    c.fillText(this.username, this.x - textWidth / 2, this.y - this.radius + 20)
     c.save()
     c.shadowColor = this.color
     c.shadowBlur = 20
